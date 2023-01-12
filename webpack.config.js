@@ -1,5 +1,4 @@
 const path = require('path');
-// const nodeExternals = require('webpack-node-externals');
 
 const isProduction = process.env.NODE_ENV == 'production';
 
@@ -10,6 +9,7 @@ const config = {
     filename: 'index.js',
     clean: true,
   },
+  target: 'node',
   module: {
     rules: [
       {
@@ -23,7 +23,6 @@ const config = {
     extensions: ['.ts', '.js'],
   },
   externalsPresets: { node: true },
-  // externals: [nodeExternals()],
 };
 
 module.exports = () => {
